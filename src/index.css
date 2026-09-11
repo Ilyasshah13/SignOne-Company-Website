@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-en: 'Manrope', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-ar: 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    background-color: #080808;
+    color: #F4F4F2;
+    font-family: var(--font-en);
+    overflow-x: hidden;
+  }
+
+  body.font-arabic {
+    font-family: var(--font-ar);
+  }
+
+  /* Smooth custom scrollbars */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0d0d0d;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2a2a2a;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E60000;
+  }
+}
+
+/* Red architectural technical accents */
+.accent-line-red {
+  position: relative;
+}
+.accent-line-red::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 48px;
+  height: 2px;
+  background-color: #E60000;
+}
+
+[dir="rtl"] .accent-line-red::after {
+  left: auto;
+  right: 0;
+}
+
