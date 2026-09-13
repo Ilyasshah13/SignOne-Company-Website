@@ -58,21 +58,54 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Col */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-[#E60000] flex items-center justify-center font-black text-white text-lg">
-                1
-              </div>
-              <span className="font-extrabold tracking-widest text-xl text-white">SIGN ONE</span>
+            <div className="flex items-center">
+              <img 
+                src="https://signone.sa/wp-content/uploads/2026/06/logo2.png" 
+                alt="Company Logo" 
+                referrerPolicy="no-referrer"
+                className="h-11 w-auto object-contain"
+              />
             </div>
             <p className="text-sm leading-relaxed text-[#7e7e7e] max-w-sm">
               {t(
-                'Sign One delivers complete signage, 3D letters, illuminated signs, aluminum cladding and architectural branding solutions across Saudi Arabia, from design and engineering to manufacturing and installation.',
-                'تقدم ساين ون حلولاً متكاملة للوحات الإعلانية، الحروف ثلاثية الأبعاد، اللوحات المضيئة، كلادينج الألمنيوم، والهويات المعمارية في جميع أنحاء المملكة العربية السعودية، بدءاً من التصميم والهندسة وحتى التصنيع والتركيب الاحترافي.'
+                'Sign One delivers complete signage, 3D letters, illuminated signs, aluminum cladding, fence hoarding and architectural branding solutions across Saudi Arabia, from engineering to factory production and installation.',
+                'تقدم ساين ون حلولاً متكاملة للوحات الإعلانية، الحروف ثلاثية الأبعاد، اللوحات المضيئة، كلادينج الألمنيوم، أسوار الهوردينج، والهويات المعمارية في جميع أنحاء المملكة العربية السعودية، بدءاً من التصميم والهندسة وحتى التصنيع والتركيب الاحترافي.'
               )}
             </p>
-            <div className="pt-2 flex items-center gap-3 text-xs text-[#666]">
-              <ShieldCheck className="w-4 h-4 text-[#E60000]" />
-              <span>{t('SASO & Civil Defense Fire-Safety Certified', 'معتمد من هيئة المواصفات والدفاع المدني')}</span>
+            <div className="pt-2 flex flex-col gap-2 text-xs text-[#888]">
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-[#E60000] shrink-0" />
+                <span>{t('SASO & Civil Defense Fire-Safety Certified', 'معتمد من هيئة المواصفات والدفاع المدني')}</span>
+              </div>
+              <div className="flex flex-wrap gap-3 pt-2">
+                <a 
+                  href="https://signone.sa/wp-content/uploads/2026/06/Signone_Brochure.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[11px] text-[#E60000] hover:text-white underline underline-offset-4 flex items-center gap-1"
+                >
+                  <ArrowUpRight className="w-3 h-3" />
+                  {t('Company Profile (PDF)', 'الملف التعريفي (PDF)')}
+                </a>
+                <a 
+                  href="https://signone.sa/wp-content/uploads/2026/06/Fence-Solutions-SIGNONE.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[11px] text-[#aaa] hover:text-white underline underline-offset-4 flex items-center gap-1"
+                >
+                  <ArrowUpRight className="w-3 h-3" />
+                  {t('Fence Solutions (PDF)', 'حلول الأسوار (PDF)')}
+                </a>
+                <a 
+                  href="https://signone.sa/wp-content/uploads/2026/06/AQC-IAS-Logo-ISO-9001-1.jpg" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-[11px] text-[#aaa] hover:text-white underline underline-offset-4 flex items-center gap-1"
+                >
+                  <ArrowUpRight className="w-3 h-3" />
+                  {t('ISO 9001:2015', 'شهادة الأيزو')}
+                </a>
+              </div>
             </div>
           </div>
 

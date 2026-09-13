@@ -120,7 +120,7 @@ export const ProcessPage: React.FC<ProcessPageProps> = ({ onNavigate }) => {
             <div className="lg:col-span-4">
               <div className="border border-[#262626] p-2 bg-[#0c0c0c] rounded-sm">
                 <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=800&q=80"
+                  src="https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34.jpeg"
                   alt="Process Step"
                   className="w-full h-64 object-cover filter contrast-[1.05]"
                   referrerPolicy="no-referrer"

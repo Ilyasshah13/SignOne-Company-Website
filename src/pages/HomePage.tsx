@@ -20,6 +20,7 @@ import {
 import { 
   initialServices, 
   initialProjects, 
+  initialClients,
   initialIndustries, 
   initialMaterials, 
   processSteps, 
@@ -35,8 +36,34 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   const { t, isRTL } = useLanguage();
   const [activeProjectFilter, setActiveProjectFilter] = useState('ALL');
   const [activeProcessTab, setActiveProcessTab] = useState(0);
+  const [activeHeroImage, setActiveHeroImage] = useState(0);
 
-  const categories = ['ALL', 'Corporate', 'Retail', 'Hospitality', 'Healthcare', 'Banking & Finance'];
+  const heroShowcaseImages = [
+    {
+      url: "https://signone.sa/wp-content/uploads/2026/06/about.jpg",
+      title: t('Architectural Facades & Sky Signage', 'واجهات معمارية ولوحات الأبراج'),
+      tag: t('Turnkey Project Execution', 'تنفيذ مشاريع متكامل')
+    },
+    {
+      url: "https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34-1024x768.jpeg",
+      title: t('3D Letters & LED Cleanroom Assembly', 'تصنيع الحروف البارزة وتجميع LED'),
+      tag: t('In-House Saudi Factory', 'المصنع المركزي بالرياض')
+    },
+    {
+      url: "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1-1024x683.webp",
+      title: t('Fire-Rated Aluminum Cladding (ACP)', 'كلادينج ألمنيوم مقاوم للحريق A2'),
+      tag: t('SASO & Civil Defense Certified', 'مطابق للمواصفات السعودية والدفاع المدني')
+    }
+  ];
+
+  const categories = [
+    'ALL',
+    'Industrial & Manufacturing',
+    'Commercial & Cladding',
+    'Retail & Commercial',
+    'Giga Projects & Construction',
+    'Corporate & Towers'
+  ];
 
   const filteredProjects = activeProjectFilter === 'ALL'
     ? initialProjects
@@ -47,89 +74,218 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="bg-[#080808] text-white">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden border-b border-[#1c1c1c]">
+      <section className="relative min-h-[92vh] flex items-center justify-center overflow-hidden border-b border-[#1c1c1c] py-16 sm:py-24">
         {/* Background architectural image with dark moody gradient overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=90"
-            alt="Sign One Architectural Facade"
-            className="w-full h-full object-cover object-center filter brightness-[0.32] contrast-[1.1] scale-105 transition-transform duration-1000 ease-out"
+            src="https://signone.sa/wp-content/uploads/2026/06/1.jpg"
+            alt="Architectural Signage & Facade Manufacturing Factory"
+            className="w-full h-full object-cover object-center filter brightness-[0.28] contrast-[1.1] scale-105 transition-transform duration-1000 ease-out"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/70 to-transparent"></div>
           <div className="absolute inset-0 bg-[radial-gradient(#E60000_1px,transparent_1px)] [background-size:32px_32px] opacity-10"></div>
         </div>
 
         {/* Content Container */}
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 py-20 flex flex-col items-start justify-center w-full">
-          {/* Small technical label */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#141414]/90 border border-[#2d2d2d] rounded-sm text-xs uppercase tracking-widest text-[#DDD] mb-6">
-            <span className="w-2 h-2 rounded-full bg-[#E60000] shadow-[0_0_8px_#E60000]"></span>
-            <span>{t('SAUDI SIGNAGE & ARCHITECTURAL SOLUTIONS', 'حلول اللوحات والتصميم المعماري في المملكة')}</span>
-          </div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+            {/* Left Column: Headline, Description & CTAs (Free of company name) */}
+            <div className="lg:col-span-7 flex flex-col items-start justify-center">
+              {/* Small technical label */}
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-[#141414]/90 border border-[#2d2d2d] rounded-sm text-xs uppercase tracking-widest text-[#DDD] mb-6">
+                <span className="w-2 h-2 rounded-full bg-[#E60000] shadow-[0_0_8px_#E60000]"></span>
+                <span>{t('SAUDI SIGNAGE & ARCHITECTURAL SOLUTIONS', 'حلول اللوحات والتصميم المعماري في المملكة')}</span>
+              </div>
 
-          {/* Dramatic H1 */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase max-w-4xl leading-[1.08] mb-6">
-            {t('WE BUILD BRANDS', 'نبني علامات تجارية')}{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F0F0F0] to-[#888]">
-              {t('THAT STAND OUT.', 'تتميز وتلهم.')}
-            </span>
-          </h1>
+              {/* Dramatic H1 */}
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white uppercase max-w-4xl leading-[1.08] mb-6">
+                {t('WE BUILD BRANDS', 'نبني علامات تجارية')}{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F0F0F0] to-[#888]">
+                  {t('THAT STAND OUT.', 'تتميز وتلهم.')}
+                </span>
+              </h1>
 
-          {/* Supporting text */}
-          <p className="text-base sm:text-xl text-[#A5A5A5] max-w-2xl font-normal leading-relaxed mb-10">
-            {t(
-              'From design and engineering to manufacturing and installation, Sign One delivers complete signage and architectural solutions across Saudi Arabia.',
-              'من التصميم والهندسة الإنشائية إلى التصنيع والتركيب، تقدم ساين ون حلولاً معمارية وإعلانية متكاملة للعلامات الرائدة في المملكة.'
-            )}
-          </p>
+              {/* Supporting text - Explicitly free of company name */}
+              <p className="text-base sm:text-xl text-[#A5A5A5] max-w-2xl font-normal leading-relaxed mb-8">
+                {t(
+                  'From design and engineering to manufacturing and installation, delivering complete signage and architectural solutions across Saudi Arabia.',
+                  'من التصميم والهندسة الإنشائية إلى التصنيع والتركيب، حلول معمارية وإعلانية متكاملة وشاملة في جميع أنحاء المملكة.'
+                )}
+              </p>
 
-          {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
-            <button
-              onClick={() => onNavigate('/quote')}
-              className="w-full sm:w-auto px-8 py-4 bg-[#E60000] hover:bg-[#CC0000] text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-all duration-200 shadow-xl shadow-red-950/50 flex items-center justify-center gap-2 group"
-            >
-              <span>{t('GET A FREE QUOTE', 'طلب عرض سعر مجاني')}</span>
-              {isRTL ? (
-                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              ) : (
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              )}
-            </button>
-            <button
-              onClick={() => onNavigate('/projects')}
-              className="w-full sm:w-auto px-8 py-4 bg-[#141414] hover:bg-[#1f1f1f] text-white font-bold text-xs uppercase tracking-widest border border-[#333] hover:border-white rounded-sm transition-colors flex items-center justify-center gap-2"
-            >
-              <span>{t('VIEW PROJECTS', 'معرض المشاريع')}</span>
-            </button>
-          </div>
+              {/* Action CTAs */}
+              <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
+                <button
+                  onClick={() => onNavigate('/quote')}
+                  className="w-full sm:w-auto px-8 py-4 bg-[#E60000] hover:bg-[#CC0000] text-white font-bold text-xs uppercase tracking-widest rounded-sm transition-all duration-200 shadow-xl shadow-red-950/50 flex items-center justify-center gap-2 group"
+                >
+                  <span>{t('GET A FREE QUOTE', 'طلب عرض سعر مجاني')}</span>
+                  {isRTL ? (
+                    <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+                  ) : (
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  )}
+                </button>
+                <button
+                  onClick={() => onNavigate('/projects')}
+                  className="w-full sm:w-auto px-8 py-4 bg-[#141414] hover:bg-[#1f1f1f] text-white font-bold text-xs uppercase tracking-widest border border-[#333] hover:border-white rounded-sm transition-colors flex items-center justify-center gap-2"
+                >
+                  <span>{t('VIEW PROJECTS', 'معرض المشاريع')}</span>
+                </button>
+              </div>
 
-          {/* Stats quick bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-12 mt-16 pt-10 border-t border-white/10 w-full">
-            <div>
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">{initialSiteSettings.stats.projectsCount}</div>
-              <div className="text-xs uppercase tracking-wider text-[#888] mt-1">{t('Delivered Projects', 'مشروع منجز بالمملكة')}</div>
+              {/* Stats quick bar */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 mt-12 pt-8 border-t border-white/10 w-full">
+                <div>
+                  <div className="text-2xl sm:text-3xl font-black text-white font-mono">{initialSiteSettings.stats.projectsCount}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-[#888] mt-1">{t('Delivered Projects', 'مشروع منجز بالمملكة')}</div>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-black text-white font-mono">{initialSiteSettings.stats.factoryAreaM2}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-[#888] mt-1">{t('Production Facility', 'مساحة المصنع المركزي')}</div>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-black text-white font-mono">{initialSiteSettings.stats.coverageCities}</div>
+                  <div className="text-[11px] uppercase tracking-wider text-[#888] mt-1">{t('Saudi Regions Covered', 'منطقة مغطاة بالمملكة')}</div>
+                </div>
+                <div>
+                  <div className="text-2xl sm:text-3xl font-black text-white font-mono">SASO / A2</div>
+                  <div className="text-[11px] uppercase tracking-wider text-[#888] mt-1">{t('Civil Defense Safety', 'شهادات الجودة والسلامة')}</div>
+                </div>
+              </div>
             </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">{initialSiteSettings.stats.factoryAreaM2}</div>
-              <div className="text-xs uppercase tracking-wider text-[#888] mt-1">{t('Production Facility', 'مساحة المصنع المركزي')}</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">{initialSiteSettings.stats.coverageCities}</div>
-              <div className="text-xs uppercase tracking-wider text-[#888] mt-1">{t('Saudi Regions Covered', 'منطقة مغطاة بالمملكة')}</div>
-            </div>
-            <div>
-              <div className="text-2xl sm:text-3xl font-black text-white font-mono">SASO / A2</div>
-              <div className="text-xs uppercase tracking-wider text-[#888] mt-1">{t('Civil Defense Safety', 'شهادات الجودة والسلامة')}</div>
+
+            {/* Right Column: Hero Area Featured Showcase Image */}
+            <div className="lg:col-span-5 relative mt-8 lg:mt-0">
+              <div className="relative border border-[#2d2d2d] bg-[#121212]/95 p-3 rounded-sm shadow-2xl backdrop-blur-sm group">
+                {/* Image display */}
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xs bg-[#1a1a1a]">
+                  <img
+                    src={heroShowcaseImages[activeHeroImage].url}
+                    alt={heroShowcaseImages[activeHeroImage].title}
+                    className="w-full h-full object-cover object-center filter brightness-[0.9] contrast-[1.08] transition-transform duration-700 ease-out group-hover:scale-105"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+
+                  {/* Top Status Tag */}
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none">
+                    <span className="px-2.5 py-1 bg-black/80 backdrop-blur-md border border-white/10 text-[10px] font-mono uppercase tracking-wider text-[#EEE] rounded-xs flex items-center gap-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                      {heroShowcaseImages[activeHeroImage].tag}
+                    </span>
+                    <span className="px-2.5 py-1 bg-[#E60000] text-white text-[10px] font-bold uppercase tracking-widest rounded-xs">
+                      ISO 9001:2015
+                    </span>
+                  </div>
+
+                  {/* Bottom Caption */}
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <h3 className="text-sm sm:text-base font-bold text-white tracking-wide leading-snug drop-shadow-md">
+                      {heroShowcaseImages[activeHeroImage].title}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Switcher Thumbnails */}
+                <div className="grid grid-cols-3 gap-2 mt-3">
+                  {heroShowcaseImages.map((img, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setActiveHeroImage(idx)}
+                      className={`relative aspect-[16/10] overflow-hidden rounded-xs border transition-all duration-200 ${
+                        activeHeroImage === idx
+                          ? 'border-[#E60000] ring-1 ring-[#E60000] opacity-100 scale-[1.02]'
+                          : 'border-[#333] opacity-60 hover:opacity-100'
+                      }`}
+                    >
+                      <img
+                        src={img.url}
+                        alt=""
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center text-[10px] uppercase tracking-widest text-[#666]">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center text-[10px] uppercase tracking-widest text-[#666]">
           <span>{t('SCROLL TO EXPLORE', 'مرر للأسفل للاستكشاف')}</span>
           <ChevronDown className="w-4 h-4 animate-bounce mt-1 text-[#E60000]" />
+        </div>
+      </section>
+
+      {/* 1.5 SIGNATURE CAPABILITIES CARDS (Inspired directly by signone.sa hero cards) */}
+      <section className="relative z-20 max-w-7xl mx-auto px-4 sm:px-8 -mt-6 sm:-mt-10 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          {/* Card 1: Signage */}
+          <div
+            onClick={() => onNavigate('/services/3d-letters')}
+            className="group relative h-44 sm:h-48 overflow-hidden rounded-sm border border-[#2b2b2b] bg-[#141414] cursor-pointer transition-all duration-300 hover:border-[#E60000] shadow-xl"
+          >
+            <img
+              src="https://signone.sa/wp-content/uploads/2026/06/2.jpg"
+              alt="Signage & 3D Letters"
+              className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-[1.1] transition-transform duration-500 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <span className="text-[10px] font-mono text-[#E60000] uppercase tracking-widest mb-1">01 / DIVISION</span>
+              <h3 className="text-lg sm:text-xl font-black uppercase text-white tracking-tight flex items-center justify-between">
+                <span>{t('Signage & 3D Letters', 'اللوحات والحروف البارزة')}</span>
+                <ArrowRight className="w-4 h-4 text-[#888] group-hover:text-[#E60000] group-hover:translate-x-1 transition-all" />
+              </h3>
+            </div>
+          </div>
+
+          {/* Card 2: Aluminum Cladding */}
+          <div
+            onClick={() => onNavigate('/services/aluminum-cladding')}
+            className="group relative h-44 sm:h-48 overflow-hidden rounded-sm border border-[#2b2b2b] bg-[#141414] cursor-pointer transition-all duration-300 hover:border-[#E60000] shadow-xl"
+          >
+            <img
+              src="https://signone.sa/wp-content/uploads/2026/06/4.jpg"
+              alt="Aluminum Cladding"
+              className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-[1.1] transition-transform duration-500 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <span className="text-[10px] font-mono text-[#E60000] uppercase tracking-widest mb-1">02 / DIVISION</span>
+              <h3 className="text-lg sm:text-xl font-black uppercase text-white tracking-tight flex items-center justify-between">
+                <span>{t('Aluminum Cladding (ACP)', 'كلادينج الألمنيوم المركب')}</span>
+                <ArrowRight className="w-4 h-4 text-[#888] group-hover:text-[#E60000] group-hover:translate-x-1 transition-all" />
+              </h3>
+            </div>
+          </div>
+
+          {/* Card 3: Fence Solutions */}
+          <div
+            onClick={() => onNavigate('/services/fence-solutions')}
+            className="group relative h-44 sm:h-48 overflow-hidden rounded-sm border border-[#2b2b2b] bg-[#141414] cursor-pointer transition-all duration-300 hover:border-[#E60000] shadow-xl"
+          >
+            <img
+              src="https://signone.sa/wp-content/uploads/2026/06/1-1.jpg"
+              alt="Fence Solutions & Hoarding"
+              className="w-full h-full object-cover object-center filter brightness-[0.45] contrast-[1.1] transition-transform duration-500 group-hover:scale-110"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <span className="text-[10px] font-mono text-[#E60000] uppercase tracking-widest mb-1">03 / DIVISION</span>
+              <h3 className="text-lg sm:text-xl font-black uppercase text-white tracking-tight flex items-center justify-between">
+                <span>{t('Fence Solutions & Hoarding', 'حلول الأسوار والأسوار الإنشائية')}</span>
+                <ArrowRight className="w-4 h-4 text-[#888] group-hover:text-[#E60000] group-hover:translate-x-1 transition-all" />
+              </h3>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -171,7 +327,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <div className="lg:col-span-5 relative">
               <div className="relative border border-[#262626] p-2 bg-[#121212] rounded-sm shadow-2xl">
                 <img
-                  src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1200&q=85"
+                  src="https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34-1.jpeg"
                   alt="Precision Architectural Fabrication"
                   className="w-full h-80 sm:h-96 object-cover rounded-xs filter contrast-[1.05]"
                   referrerPolicy="no-referrer"
@@ -273,7 +429,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <div className="lg:col-span-6">
               <div className="relative border border-[#262626] rounded-sm overflow-hidden group">
                 <img
-                  src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=85"
+                  src="https://signone.sa/wp-content/uploads/2026/06/1.jpg"
                   alt="Sign One Manufacturing Workshop"
                   className="w-full h-[450px] object-cover filter contrast-[1.08] group-hover:scale-105 transition-transform duration-700"
                   referrerPolicy="no-referrer"
@@ -548,7 +704,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { title: t('5-Axis CNC Milling', 'تفريز CNC خماسي المحاور'), spec: "0.05mm Tolerance", img: "https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=600&q=80" },
+              { title: t('5-Axis CNC Milling', 'تفريز CNC خماسي المحاور'), spec: "0.05mm Tolerance", img: "https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34-1024x768.jpeg" },
               { title: t('Fiber Laser Cutting', 'قص الليزر الليفي للمعادن'), spec: "Up to 20mm Steel", img: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=600&q=80" },
               { title: t('Electrostatic Booth', 'أفران طلاء حراري'), spec: "RAL Certified Powder", img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=600&q=80" },
               { title: t('LED Clean Assembly', 'تجميع إلكتروني معزول'), spec: "IP68 Dust & Water Seal", img: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=600&q=80" }
@@ -802,29 +958,54 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
       {/* 13. CLIENTS & SECTORS */}
       <section className="py-20 px-4 sm:px-8 border-b border-[#1c1c1c] bg-[#080808]">
-        <div className="max-w-7xl mx-auto text-center space-y-8">
-          <div className="text-xs font-bold uppercase tracking-widest text-[#777]">
-            {t('TRUSTED ACROSS SECTOR LEADERS IN SAUDI ARABIA', 'ثقة كبرى القطاعات والمؤسسات في المملكة العربية السعودية')}
+        <div className="max-w-7xl mx-auto text-center space-y-10">
+          <div className="space-y-2">
+            <div className="text-xs font-bold uppercase tracking-widest text-[#E60000]">
+              {t('TRUSTED ACROSS SECTOR LEADERS IN SAUDI ARABIA', 'شركاء النجاح وكبرى القطاعات في المملكة')}
+            </div>
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              {t('OUR VALUED CLIENTS & PARTNERS', 'عملاؤنا وشركاء مسيرتنا')}
+            </h3>
+            <p className="text-xs text-[#777] max-w-xl mx-auto">
+              {t(
+                'Proudly collaborating with leading government entities, commercial giants, and giga-project contractors.',
+                'نفخر بالتعاون مع كبرى الجهات الحكومية والشركات الرائدة والمقاولين في أضخم مشاريع المملكة.'
+              )}
+            </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-            {[
-              t('Corporate Towers', 'الأبراج المؤسسية'),
-              t('Luxury Hospitality', 'الفنادق الفاخرة'),
-              t('Retail Flagships', 'المتاجر الكبرى'),
-              t('Medical Cities', 'المدن الطبية'),
-              t('Banking Head Offices', 'المقرات المصرفية'),
-              t('Automotive Centers', 'وكالات السيارات')
-            ].map((client, idx) => (
-              <div key={idx} className="bg-[#121212] border border-[#202020] py-6 px-4 rounded-sm flex items-center justify-center">
-                <span className="text-xs font-bold tracking-wider text-[#AAA] uppercase">{client}</span>
+          {/* Authentic Client Logos Grid from signone.sa */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-7 gap-3 sm:gap-4">
+            {initialClients.slice(0, 28).map((client) => (
+              <div 
+                key={client.id} 
+                className="bg-white p-3 sm:p-4 rounded-sm border border-[#222] hover:border-[#E60000] transition-all flex items-center justify-center group h-20 sm:h-24 shadow-sm"
+              >
+                <img 
+                  src={client.logoUrl} 
+                  alt={client.name} 
+                  referrerPolicy="no-referrer"
+                  className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                  loading="lazy"
+                  onError={(e) => {
+                    // Fallback to client1.jpg if any specific logo fails
+                    (e.target as HTMLImageElement).src = 'https://signone.sa/wp-content/uploads/2026/06/client1.jpg';
+                  }}
+                />
               </div>
             ))}
           </div>
 
-          <p className="text-xs font-mono text-[#555]">
-            {t('PROJECTS THAT SPEAK FOR THEMSELVES.', 'مشاريع تتحدث عن جودتها بنفسها.')}
-          </p>
+          <div className="pt-2">
+            <a
+              href="https://signone.sa/wp-content/uploads/2026/06/Signone_Brochure.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-xs font-mono text-[#AAA] hover:text-[#E60000] transition-colors border-b border-[#333] hover:border-[#E60000] pb-1"
+            >
+              <span>{t('DOWNLOAD COMPLETE CLIENT LIST IN SIGN ONE BROCHURE (PDF)', 'تحميل قائمة العملاء الكاملة بملف الشركة (PDF)')}</span>
+            </a>
+          </div>
         </div>
       </section>
 

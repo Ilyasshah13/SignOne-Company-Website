@@ -142,4 +142,15 @@ export interface SiteSettings {
     coverageCities: string;
     factoryAreaM2: string;
   };
+  brochureUrl?: string;
+  fenceSolutionsUrl?: string;
+  isoCertUrl?: string;
+  logoUrl?: string;
+}
+
+export interface ClientLogo {
+  id: string;
+  name: string;
+  nameAr?: string;
+  logoUrl: string;
 }

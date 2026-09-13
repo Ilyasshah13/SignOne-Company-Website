@@ -27,9 +27,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
       <section className="relative py-24 px-4 sm:px-8 border-b border-[#1c1c1c] overflow-hidden bg-[#0e0e0e]">
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1600&q=80"
-            alt="Sign One Architectural Details"
-            className="w-full h-full object-cover"
+            src="https://signone.sa/wp-content/uploads/2026/06/about.jpg"
+            alt="Architectural Details & Facility"
+            className="w-full h-full object-cover filter contrast-[1.1]"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -88,13 +88,32 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
                 <div className="text-xs text-[#777] uppercase tracking-wider mt-1">{t('Manufacturing Facility', 'مساحة المصنع')}</div>
               </div>
             </div>
+
+            <div className="pt-2 flex flex-wrap gap-4">
+              <a
+                href="https://signone.sa/wp-content/uploads/2026/06/Signone_Brochure.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-[#1a1a1a] hover:bg-[#252525] border border-[#333] hover:border-[#E60000] text-xs font-bold uppercase tracking-wider text-white transition-colors flex items-center gap-2"
+              >
+                <span>{t('DOWNLOAD COMPANY PROFILE (PDF)', 'تحميل بروفايل الشركة (PDF)')}</span>
+              </a>
+              <a
+                href="https://signone.sa/wp-content/uploads/2026/06/AQC-IAS-Logo-ISO-9001-1.jpg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2.5 bg-[#1a1a1a] hover:bg-[#252525] border border-[#333] hover:border-[#E60000] text-xs font-bold uppercase tracking-wider text-[#aaa] hover:text-white transition-colors flex items-center gap-2"
+              >
+                <span>{t('ISO 9001:2015 CERTIFICATE', 'شهادة الأيزو 9001:2015')}</span>
+              </a>
+            </div>
           </div>
 
           <div className="lg:col-span-6 relative">
             <div className="border border-[#262626] p-2 bg-[#121212] rounded-sm shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=85"
-                alt="Architectural Corporate Facility"
+                src="https://signone.sa/wp-content/uploads/2026/06/1.jpg"
+                alt="Sign One Industrial Complex Riyadh"
                 className="w-full h-[460px] object-cover rounded-xs filter contrast-[1.05]"
                 referrerPolicy="no-referrer"
               />

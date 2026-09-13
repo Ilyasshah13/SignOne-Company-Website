@@ -92,24 +92,19 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-8 flex items-center justify-between">
-          {/* Authentic Brand Identity */}
+          {/* Authentic Brand Identity - Only Logo */}
           <div 
             onClick={() => handleNavClick('/')}
-            className="cursor-pointer flex items-center gap-3 select-none group"
+            className="cursor-pointer flex items-center select-none group py-0.5"
+            title="Home"
           >
-            {/* Red geometric icon */}
-            <div className="w-10 h-10 bg-[#E60000] flex items-center justify-center font-black text-white text-xl tracking-tighter shadow-md shadow-red-950/40 group-hover:scale-105 transition-transform duration-200">
-              <span>1</span>
-            </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="font-black tracking-widest text-lg sm:text-xl text-white">SIGN ONE</span>
-                <span className="text-[10px] text-[#E60000] font-bold px-1 py-0.5 border border-[#E60000]/40 rounded-xs">SA</span>
-              </div>
-              <span className="text-[10px] tracking-wider text-[#8C8C8C] uppercase font-medium">
-                {t('Architectural & Signage', 'حلول معمارية ولوحات')}
-              </span>
-            </div>
+            {/* Real Logo Image */}
+            <img 
+              src="https://signone.sa/wp-content/uploads/2026/06/logo2.png" 
+              alt="Company Logo" 
+              referrerPolicy="no-referrer"
+              className="h-10 sm:h-11 md:h-12 w-auto object-contain transition-transform duration-200 group-hover:scale-[1.03]"
+            />
           </div>
 
           {/* Desktop Navigation Links */}

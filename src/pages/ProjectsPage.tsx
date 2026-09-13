@@ -15,18 +15,19 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
 
   const categories = [
     'ALL',
-    'Corporate',
-    'Retail',
-    'Hospitality',
-    'Banking & Finance',
-    'Healthcare'
+    'Industrial & Manufacturing',
+    'Commercial & Cladding',
+    'Retail & Commercial',
+    'Giga Projects & Construction',
+    'Corporate & Towers',
+    'Outdoor Advertising'
   ];
 
   const locations = [
     'ALL',
     'Riyadh',
     'Jeddah',
-    'Al Khobar'
+    'Eastern Province'
   ];
 
   const filteredProjects = initialProjects.filter(project => {

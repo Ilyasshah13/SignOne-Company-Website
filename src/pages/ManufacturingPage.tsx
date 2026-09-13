@@ -24,37 +24,37 @@ export const ManufacturingPage: React.FC<ManufacturingPageProps> = ({ onNavigate
       num: "01",
       title: t('Robotic Fiber Laser Cutting', 'قص الليزر الليفي المؤتمت'),
       desc: t('High-precision fiber optics cutting carbon steel, stainless steel, and aerospace aluminum up to 20mm with 0.05mm edge tolerance.', 'تقنية ليزرية متطورة لقص الفولاذ والستانلس ستيل والألمنيوم بسماكات تصل إلى 20 مم وبدقة 0.05 مم.'),
-      img: "https://images.unsplash.com/photo-1517524008697-84bbe3c3fd98?auto=format&fit=crop&w=800&q=80"
+      img: "https://signone.sa/wp-content/uploads/2026/06/1.jpg"
     },
     {
       num: "02",
       title: t('5-Axis Heavy CNC Routing', 'تفريز CNC خماسي المحاور'),
       desc: t('High-speed computer-guided routing for acrylics, composite panels (ACP), solid woods, and dense non-ferrous metals.', 'تفريز رقمي سريع لألواح الأكريليك والكلادينج المركب والمعادن غير الحديدية.'),
-      img: "https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=800&q=80"
+      img: "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg"
     },
     {
       num: "03",
       title: t('Automated 3D Channel Bending', 'الثني الآلي ثلاثي الأبعاد'),
       desc: t('Computer-controlled return bender creating intricate typography loops, sharp corners, and fluid curved letterforms with zero crimping.', 'ثني آلي محوسب للأجناب المعدنية لتشكيل أدق تفاصيل الحروف والشعارات دون أي عيوب.'),
-      img: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80"
+      img: "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp"
     },
     {
       num: "04",
       title: t('Certified TIG / MIG Welding', 'اللحام الإنشائي TIG و MIG'),
       desc: t('Structural aluminum and stainless steel welding executed by AWS-certified welders for internal structural sub-frames.', 'لحام احترافي معتمد لهياكل الألمنيوم والحديد الداخلي لضمان المتانة الإنشائية.'),
-      img: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80"
+      img: "https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34.jpeg"
     },
     {
       num: "05",
       title: t('Electrostatic Powder Booth', 'أفران الطلاء الكتروستاتيكي الحراري'),
       desc: t('Oven-cured industrial powder coating providing 20-year UV and salt-spray resistance across the entire international RAL spectrum.', 'طلاء حراري معالج بالأفران مقاوم لأشعة الشمس والملوحة وفق المعايير الدولية RAL.'),
-      img: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+      img: "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp"
     },
     {
       num: "06",
       title: t('Dust-Free Cleanroom LED Assembly', 'غرفة تجميع إلكترونيات LED معزولة'),
       desc: t('Hermetically sealed assembly stations with anti-static surfaces for optical lens positioning, IP68 waterproofing, and thermal bonding.', 'بيئة نظيفة ومعزولة لتثبيت رقائق LED المقاومة للماء IP68 وتوزيع العدسات المتجانس.'),
-      img: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80"
+      img: "https://signone.sa/wp-content/uploads/2026/06/4.jpg"
     }
   ];
 
@@ -169,7 +169,7 @@ export const ManufacturingPage: React.FC<ManufacturingPageProps> = ({ onNavigate
           <div className="lg:col-span-6">
             <div className="border border-[#222] p-2 bg-[#121212] rounded-sm">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d0fbb186156f?auto=format&fit=crop&w=1200&q=85"
+                src="https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34-1.jpeg"
                 alt="Quality Control testing"
                 className="w-full h-96 object-cover rounded-xs filter contrast-[1.05]"
                 referrerPolicy="no-referrer"
