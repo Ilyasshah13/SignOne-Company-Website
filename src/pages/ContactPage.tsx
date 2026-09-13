@@ -10,7 +10,8 @@ import {
   CheckCircle2, 
   Building2, 
   Factory, 
-  ShieldCheck 
+  ShieldCheck,
+  MessageSquare
 } from 'lucide-react';
 
 interface ContactPageProps {
@@ -106,10 +107,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <div className="p-2 bg-[#1c1c1c] text-[#E60000] rounded-xs border border-[#333]">
                     <Building2 className="w-4 h-4" />
                   </div>
-                  <span>{t('Riyadh Head Office & Showroom', 'المقر الرئيسي وصالة العرض بالرياض')}</span>
+                  <span>{t('Head Office — Jeddah', 'المكتب الرئيسي — جدة')}</span>
                 </div>
-                <p className="text-xs text-[#999] pl-11 rtl:pr-11 rtl:pl-0">
-                  {initialSiteSettings.address}
+                <p className="text-xs text-[#DDD] font-medium pl-11 rtl:pr-11 rtl:pl-0">
+                  {t('Macaroni Street, Al-Azizia District, Jeddah, Kingdom of Saudi Arabia', 'شارع المكرونة، حي العزيزية، جدة، المملكة العربية السعودية')}
                 </p>
               </div>
 
@@ -118,10 +119,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <div className="p-2 bg-[#1c1c1c] text-[#E60000] rounded-xs border border-[#333]">
                     <Factory className="w-4 h-4" />
                   </div>
-                  <span>{t('Central Industrial Facility', 'المجمع الصناعي المركزي')}</span>
+                  <span>{t('Central Manufacturing Facility & Regional Office', 'المصنع المركزي والمكتب الإقليمي')}</span>
                 </div>
                 <p className="text-xs text-[#999] pl-11 rtl:pr-11 rtl:pl-0">
-                  {t('2nd Industrial City, Exit 12, Riyadh, Saudi Arabia', 'المدينة الصناعية الثانية، مخرج 12، الرياض، المملكة العربية السعودية')}
+                  {t('Prince Fahd Bin Salman Road & 2nd Industrial City, Exit 12, Riyadh, Saudi Arabia', 'طريق الأمير فهد بن سلمان والمدينة الصناعية الثانية، مخرج 12، الرياض')}
                 </p>
               </div>
 
@@ -132,22 +133,40 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   </div>
                   <span>{t('Direct Contact & Support', 'الاتصال المباشر والدعم')}</span>
                 </div>
-                <div className="text-xs text-[#999] pl-11 rtl:pr-11 rtl:pl-0 space-y-1">
-                  <div>{t('Phone:', 'الهاتف:')} <a href={`tel:${initialSiteSettings.phone}`} className="text-white hover:text-[#E60000]">{initialSiteSettings.phone}</a></div>
-                  <div>{t('Email:', 'البريد:')} <a href={`mailto:${initialSiteSettings.email}`} className="text-white hover:text-[#E60000]">{initialSiteSettings.email}</a></div>
-                  <div>{t('Working Hours:', 'أوقات العمل:')} {initialSiteSettings.workingHours}</div>
+                <div className="text-xs text-[#999] pl-11 rtl:pr-11 rtl:pl-0 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#888]">{t('Direct WhatsApp:', 'واتساب مباشر:')}</span>
+                    <a href="https://wa.me/966560003156" target="_blank" rel="noopener noreferrer" className="text-[#25D366] font-mono font-bold hover:underline" dir="ltr">
+                      +966 56 000 3156
+                    </a>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[#888]">{t('Phone:', 'الهاتف:')}</span>
+                    <a href="tel:+966560003156" className="text-white hover:text-[#E60000] font-mono font-medium" dir="ltr">
+                      +966 56 000 3156
+                    </a>
+                  </div>
+                  <div>
+                    <span className="text-[#888]">{t('Email:', 'البريد:')} </span>
+                    <a href={`mailto:${initialSiteSettings.email}`} className="text-white hover:text-[#E60000]">{initialSiteSettings.email}</a>
+                  </div>
+                  <div>
+                    <span className="text-[#888]">{t('Working Hours:', 'أوقات العمل:')} </span>
+                    <span className="text-[#ccc]">{initialSiteSettings.workingHours}</span>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Quick WhatsApp button */}
             <a
-              href="https://wa.me/966500092520"
+              href="https://wa.me/966560003156"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-3.5 bg-[#25D366] hover:bg-[#20b858] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-colors flex items-center justify-center gap-2"
+              className="w-full py-3.5 bg-[#25D366] hover:bg-[#20b858] text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-all shadow-lg shadow-green-950/40 flex items-center justify-center gap-2"
             >
-              <span>{t('DIRECT WHATSAPP CHAT WITH ENGINEER', 'محادثة واتساب فورية مع المهندس')}</span>
+              <MessageSquare className="w-4 h-4 fill-white" />
+              <span>{t('DIRECT WHATSAPP (+966 56 000 3156)', 'محادثة واتساب مباشرة (+966 56 000 3156)')}</span>
             </a>
           </div>
 

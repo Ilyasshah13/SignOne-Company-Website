@@ -523,7 +523,7 @@ export const AdminPage: React.FC<AdminPageProps> = ({ onNavigate }) => {
               </div>
 
               <div>
-                <label className="text-[#AAA] font-semibold uppercase block mb-1">{t('Riyadh Headquarters Address', 'عنوان المقر الرئيسي')}</label>
+                <label className="text-[#AAA] font-semibold uppercase block mb-1">{t('Head Office Address', 'عنوان المقر الرئيسي')}</label>
                 <input
                   type="text"
                   value={siteSettings.address}

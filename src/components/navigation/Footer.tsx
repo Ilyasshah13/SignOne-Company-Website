@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Clock, MessageSquare } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -42,11 +42,12 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {t('REQUEST A QUOTE', 'طلب عرض سعر')}
             </button>
             <a
-              href="https://wa.me/966500092520"
+              href="https://wa.me/966560003156"
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-[#333] hover:border-white text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-sm transition-colors"
+              className="border border-[#333] hover:border-[#25D366] hover:text-[#25D366] text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-sm transition-colors flex items-center gap-2"
             >
+              <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
               {t('WHATSAPP INQUIRY', 'محادثة واتساب')}
             </a>
           </div>
@@ -201,13 +202,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               <div className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-[#E60000] shrink-0 mt-0.5" />
                 <span className="leading-snug">
-                  {t('Prince Fahd Bin Salman Road, Riyadh, Kingdom of Saudi Arabia', 'طريق الأمير فهد بن سلمان، الرياض، المملكة العربية السعودية')}
+                  <strong className="text-white block text-[11px] mb-0.5">{t('Head Office:', 'المكتب الرئيسي:')}</strong>
+                  {t('Macaroni Street, Al-Azizia District, Jeddah, Saudi Arabia', 'شارع المكرونة، حي العزيزية، جدة، المملكة العربية السعودية')}
                 </span>
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-[#E60000] shrink-0" />
-                <a href="tel:+966500092520" className="hover:text-white transition-colors" dir="ltr">
-                  +966 500 092 520
+                <a href="tel:+966560003156" className="hover:text-white transition-colors" dir="ltr">
+                  +966 56 000 3156
+                </a>
+              </div>
+              <div className="flex items-center gap-2.5">
+                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
+                <a 
+                  href="https://wa.me/966560003156" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-white hover:text-[#25D366] transition-colors flex items-center gap-1.5" 
+                  dir="ltr"
+                >
+                  <span className="text-[#25D366] text-[10px] font-bold uppercase">{t('Direct WhatsApp:', 'واتساب مباشر:')}</span>
+                  <span>+966 56 000 3156</span>
                 </a>
               </div>
               <div className="flex items-center gap-2.5">

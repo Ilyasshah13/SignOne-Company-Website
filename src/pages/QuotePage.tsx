@@ -183,7 +183,7 @@ export const QuotePage: React.FC<QuotePageProps> = ({ onNavigate }) => {
 
               <div className="pt-4 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href={`https://wa.me/966500092520?text=${encodeURIComponent(
+                  href={`https://wa.me/966560003156?text=${encodeURIComponent(
                     `Hello Sign One, I just submitted project quote reference ${submittedQuoteId} on your portal.`
                   )}`}
                   target="_blank"

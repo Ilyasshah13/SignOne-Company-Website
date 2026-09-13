@@ -1071,17 +1071,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               {isRTL ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
             </button>
             <a
-              href="https://wa.me/966500092520"
+              href="https://wa.me/966560003156"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-8 py-4 bg-[#141414] hover:bg-[#202020] text-white font-bold text-xs uppercase tracking-widest border border-[#333] hover:border-white rounded-sm transition-colors"
+              className="px-8 py-4 bg-[#141414] hover:bg-[#202020] hover:border-[#25D366] text-white font-bold text-xs uppercase tracking-widest border border-[#333] rounded-sm transition-colors flex items-center gap-2"
             >
-              {t('WHATSAPP US', 'محادثة عبر واتساب')}
+              <span className="w-2 h-2 rounded-full bg-[#25D366]"></span>
+              {t('DIRECT WHATSAPP (+966 56 000 3156)', 'محادثة واتساب (+966 56 000 3156)')}
             </a>
           </div>
 
-          <div className="pt-6 text-xs text-[#666] flex items-center justify-center gap-4">
-            <span>{t('Phone:', 'هاتف:')} +966 500 092 520</span>
+          <div className="pt-6 text-xs text-[#666] flex flex-wrap items-center justify-center gap-4">
+            <span>{t('WhatsApp & Phone:', 'واتساب وهاتف:')} <a href="tel:+966560003156" className="text-white hover:text-[#E60000] font-mono" dir="ltr">+966 56 000 3156</a></span>
+            <span>•</span>
+            <span>{t('Head Office:', 'المكتب الرئيسي:')} {t('Macaroni St, Al-Azizia, Jeddah', 'شارع المكرونة، العزيزية، جدة')}</span>
             <span>•</span>
             <span>{t('Email:', 'بريد إلكتروني:')} one@signone.sa</span>
           </div>

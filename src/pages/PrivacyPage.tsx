@@ -47,8 +47,8 @@ export const PrivacyPage: React.FC = () => {
             <h2 className="text-sm font-bold text-white uppercase">{t('3. Contact & Direct Inquiries', '٣. الاستفسارات وحقوق المستخدم')}</h2>
             <p>
               {t(
-                'For privacy requests or verification of corporate project records, contact our compliance officer at info@signone.sa or call +966 50 009 2520.',
-                'لأية استفسارات تتعلق بسياسة الخصوصية وحفظ السجلات، يرجى التواصل مع مسؤول الامتثال عبر البريد info@signone.sa أو الهاتف +966500092520.'
+                'For privacy requests or verification of corporate project records, contact our compliance officer at one@signone.sa or call / WhatsApp +966 56 000 3156.',
+                'لأية استفسارات تتعلق بسياسة الخصوصية وحفظ السجلات، يرجى التواصل مع مسؤول الامتثال عبر البريد one@signone.sa أو الهاتف / واتساب +966560003156.'
               )}
             </p>
           </section>

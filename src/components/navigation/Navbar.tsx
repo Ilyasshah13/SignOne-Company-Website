@@ -60,15 +60,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
               {t('Saudi Signage & Architectural Solutions', 'حلول اللوحات والتصميم المعماري في المملكة العربية السعودية')}
             </span>
             <span className="text-[#333]">|</span>
-            <span className="tracking-wider">{t('Prince Fahd Bin Salman Road, Riyadh', 'طريق الأمير فهد بن سلمان، الرياض')}</span>
+            <span className="tracking-wider">{t('Head Office: Macaroni St, Al-Azizia District, Jeddah', 'المكتب الرئيسي: شارع المكرونة، حي العزيزية، جدة')}</span>
           </div>
           <div className="flex items-center gap-5">
             <a 
-              href="tel:+966500092520" 
+              href="tel:+966560003156" 
               className="hover:text-white transition-colors flex items-center gap-1.5"
             >
               <Phone className="w-3 h-3 text-[#E60000]" />
-              <span dir="ltr">+966 500 092 520</span>
+              <span dir="ltr">+966 56 000 3156</span>
             </a>
             <span className="text-[#333]">|</span>
             <button
@@ -210,17 +210,20 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
             </button>
 
             <div className="flex items-center justify-between pt-2 text-xs text-[#888]">
-              <a href="tel:+966500092520" className="flex items-center gap-1.5 hover:text-white">
+              <a href="tel:+966560003156" className="flex items-center gap-1.5 hover:text-white">
                 <Phone className="w-3.5 h-3.5 text-[#E60000]" />
-                <span dir="ltr">+966 500 092 520</span>
+                <span dir="ltr">+966 56 000 3156</span>
               </a>
               <button 
                 onClick={() => handleNavClick('/admin')} 
-                className="flex items-center gap-1 hover:text-white"
+                className="flex items-center gap-1 hover:text-white text-xs"
               >
                 <ShieldAlert className="w-3.5 h-3.5 text-[#E60000]" />
                 <span>{t('Admin Panel', 'لوحة التحكم')}</span>
               </button>
+            </div>
+            <div className="pt-1 text-[11px] text-[#666]">
+              {t('Head Office: Macaroni St, Al-Azizia, Jeddah', 'المكتب الرئيسي: شارع المكرونة، العزيزية، جدة')}
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ interface WhatsAppButtonProps {
 
 export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ onQuoteClick }) => {
   const { t, isRTL } = useLanguage();
-  const whatsappNumber = "966500092520";
+  const whatsappNumber = "966560003156";
   const defaultMessage = encodeURIComponent(
     t(
       "Hello Sign One team, I would like to inquire about architectural signage and cladding solutions for my project in Saudi Arabia.",
@@ -35,7 +35,7 @@ export const WhatsAppButton: React.FC<WhatsAppButtonProps> = ({ onQuoteClick }) 
               {t('WhatsApp Direct', 'محادثة مباشرة')}
             </span>
             <span className="text-xs font-bold text-white tracking-wide" dir="ltr">
-              +966 500 092 520
+              +966 56 000 3156
             </span>
           </div>
         </a>
