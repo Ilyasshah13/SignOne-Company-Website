@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../../context/LanguageContext';
-import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Clock, MessageSquare } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowUpRight, ShieldCheck, Clock } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (path: string) => void;
@@ -42,13 +42,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               {t('REQUEST A QUOTE', 'طلب عرض سعر')}
             </button>
             <a
-              href="https://wa.me/966560003156"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="border border-[#333] hover:border-[#25D366] hover:text-[#25D366] text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-sm transition-colors flex items-center gap-2"
+              href="mailto:one@signone.sa"
+              className="border border-[#333] hover:border-[#E60000] hover:text-white text-white text-xs uppercase tracking-wider font-semibold px-6 py-3 rounded-sm transition-colors flex items-center gap-2"
             >
-              <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
-              {t('WHATSAPP INQUIRY', 'محادثة واتساب')}
+              <Mail className="w-3.5 h-3.5 text-[#E60000]" />
+              {t('OFFICIAL EMAIL INQUIRY', 'مراسلة البريد الرسمي')}
             </a>
           </div>
         </div>
@@ -212,27 +210,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   +966 56 000 3156
                 </a>
               </div>
-              <div className="flex items-center gap-2.5">
-                <MessageSquare className="w-4 h-4 text-[#25D366] shrink-0" />
-                <a 
-                  href="https://wa.me/966560003156" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
-                  className="text-white hover:text-[#25D366] transition-colors flex items-center gap-1.5" 
-                  dir="ltr"
-                >
-                  <span className="text-[#25D366] text-[10px] font-bold uppercase">{t('Direct WhatsApp:', 'واتساب مباشر:')}</span>
-                  <span>+966 56 000 3156</span>
-                </a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#E60000] shrink-0" />
+              <div className="flex items-start gap-2.5">
+                <Mail className="w-4 h-4 text-[#E60000] shrink-0 mt-0.5" />
                 <div className="flex flex-col">
-                  <a href="mailto:one@signone.sa" className="hover:text-white transition-colors">
+                  <span className="text-[#888] text-[10px] uppercase font-semibold">{t('Official Company Email', 'البريد الإلكتروني الرسمي')}</span>
+                  <a href="mailto:one@signone.sa" className="text-white hover:text-[#E60000] transition-colors font-mono text-xs">
                     one@signone.sa
                   </a>
-                  <a href="mailto:pr@signone.sa" className="hover:text-white transition-colors text-[11px] text-[#777]">
-                    pr@signone.sa
+                  <a href="mailto:pr@signone.sa" className="text-[#777] hover:text-white transition-colors text-[11px] font-mono">
+                    pr@signone.sa <span className="text-[9px] text-[#555]">({t('PR & Corporate', 'العلاقات والإعلام')})</span>
                   </a>
                 </div>
               </div>

@@ -7,10 +7,7 @@ import {
   Globe, 
   ArrowRight, 
   ArrowLeft, 
-  Phone, 
-  ShieldAlert,
-  Layers,
-  Sparkles
+  ShieldAlert
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -51,38 +48,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
 
   return (
     <>
-      {/* Top micro bar for corporate verified info */}
-      <div className="bg-[#0e0e0e] border-b border-[#1f1f1f] text-xs py-1.5 px-4 sm:px-8 hidden md:block">
-        <div className="max-w-7xl mx-auto flex items-center justify-between text-[#8C8C8C]">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#00C853] animate-pulse"></span>
-              {t('Saudi Signage & Architectural Solutions', 'حلول اللوحات والتصميم المعماري في المملكة العربية السعودية')}
-            </span>
-            <span className="text-[#333]">|</span>
-            <span className="tracking-wider">{t('Head Office: Macaroni St, Al-Azizia District, Jeddah', 'المكتب الرئيسي: شارع المكرونة، حي العزيزية، جدة')}</span>
-          </div>
-          <div className="flex items-center gap-5">
-            <a 
-              href="tel:+966560003156" 
-              className="hover:text-white transition-colors flex items-center gap-1.5"
-            >
-              <Phone className="w-3 h-3 text-[#E60000]" />
-              <span dir="ltr">+966 56 000 3156</span>
-            </a>
-            <span className="text-[#333]">|</span>
-            <button
-              onClick={() => handleNavClick('/admin')}
-              className="hover:text-white transition-colors flex items-center gap-1 text-[11px] text-[#777]"
-              title={t('Admin Portal', 'بوابة الإدارة')}
-            >
-              <ShieldAlert className="w-3 h-3 text-[#E60000]" />
-              <span>{t('Admin', 'لوحة الإدارة')}</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
       {/* Main sticky navigation */}
       <header 
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
@@ -151,6 +116,16 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
               <span>{language === 'en' ? 'العربية' : 'EN'}</span>
             </button>
 
+            {/* Admin Portal Quick Access */}
+            <button
+              onClick={() => handleNavClick('/admin')}
+              className="p-2 text-[#777] hover:text-white hover:bg-[#181818] rounded-md transition-colors"
+              title={t('Admin Portal', 'لوحة الإدارة')}
+              aria-label={t('Admin Portal', 'لوحة الإدارة')}
+            >
+              <ShieldAlert className="w-4 h-4 text-[#777] hover:text-[#E60000]" />
+            </button>
+
             {/* Primary Quote CTA Button */}
             <button
               onClick={() => handleNavClick('/quote')}
@@ -209,21 +184,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPath, onNavigate, onOpenS
               {isRTL ? <ArrowLeft className="w-4 h-4" /> : <ArrowRight className="w-4 h-4" />}
             </button>
 
-            <div className="flex items-center justify-between pt-2 text-xs text-[#888]">
-              <a href="tel:+966560003156" className="flex items-center gap-1.5 hover:text-white">
-                <Phone className="w-3.5 h-3.5 text-[#E60000]" />
-                <span dir="ltr">+966 56 000 3156</span>
-              </a>
+            <div className="flex items-center justify-between pt-2 border-t border-[#222]">
+              <span className="text-xs text-[#666]">{t('Saudi Signage & Facades', 'لوحات وواجهات معمارية بالمملكة')}</span>
               <button 
                 onClick={() => handleNavClick('/admin')} 
-                className="flex items-center gap-1 hover:text-white text-xs"
+                className="flex items-center gap-1.5 hover:text-white text-xs text-[#888] bg-[#141414] px-3 py-1.5 rounded border border-[#222]"
               >
                 <ShieldAlert className="w-3.5 h-3.5 text-[#E60000]" />
                 <span>{t('Admin Panel', 'لوحة التحكم')}</span>
               </button>
-            </div>
-            <div className="pt-1 text-[11px] text-[#666]">
-              {t('Head Office: Macaroni St, Al-Azizia, Jeddah', 'المكتب الرئيسي: شارع المكرونة، العزيزية، جدة')}
             </div>
           </div>
         </div>

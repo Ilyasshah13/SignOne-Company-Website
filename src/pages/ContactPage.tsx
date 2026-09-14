@@ -146,9 +146,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                       +966 56 000 3156
                     </a>
                   </div>
-                  <div>
-                    <span className="text-[#888]">{t('Email:', 'البريد:')} </span>
-                    <a href={`mailto:${initialSiteSettings.email}`} className="text-white hover:text-[#E60000]">{initialSiteSettings.email}</a>
+                  <div className="flex flex-col gap-1">
+                    <div className="flex items-center gap-2">
+                      <span className="text-[#888]">{t('Official Email:', 'البريد الرسمي:')} </span>
+                      <a href="mailto:one@signone.sa" className="text-white hover:text-[#E60000] font-mono font-medium">one@signone.sa</a>
+                    </div>
+                    <div className="flex items-center gap-2 pl-0 text-[11px] text-[#777]">
+                      <span className="text-[#666]">{t('PR & Media:', 'العلاقات والإعلام:')} </span>
+                      <a href="mailto:pr@signone.sa" className="hover:text-white font-mono">pr@signone.sa</a>
+                    </div>
                   </div>
                   <div>
                     <span className="text-[#888]">{t('Working Hours:', 'أوقات العمل:')} </span>

@@ -1086,7 +1086,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             <span>•</span>
             <span>{t('Head Office:', 'المكتب الرئيسي:')} {t('Macaroni St, Al-Azizia, Jeddah', 'شارع المكرونة، العزيزية، جدة')}</span>
             <span>•</span>
-            <span>{t('Email:', 'بريد إلكتروني:')} one@signone.sa</span>
+            <span>{t('Official Email:', 'البريد الرسمي:')} <a href="mailto:one@signone.sa" className="text-white hover:text-[#E60000] font-mono">one@signone.sa</a></span>
           </div>
         </div>
       </section>
