@@ -49,6 +49,12 @@ export interface ProjectItem {
   installationDescription?: string;
   installationDescriptionAr?: string;
   featuredImage: string;
+  cutoutImage?: string;
+  signType?: string;
+  signTypeAr?: string;
+  illuminationColor?: string;
+  letterDepth?: string;
+  hasCutoutMode?: boolean;
   gallery: string[];
   featured: boolean;
   published: boolean;

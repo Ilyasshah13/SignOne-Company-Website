@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { initialProjects } from '../data/initialData';
 import { ProjectLightbox } from '../components/ui/ProjectLightbox';
+import { StudioCutoutViewer } from '../components/ui/StudioCutoutViewer';
 import { 
   ArrowLeft, 
   ArrowRight, 
@@ -107,6 +108,25 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                 {t(project.description, project.descriptionAr)}
               </p>
             </div>
+
+            {/* Studio Cutout & Lighting Simulator */}
+            {(project.hasCutoutMode || project.cutoutImage) && (
+              <div className="space-y-3 pt-2">
+                <div className="flex items-center justify-between">
+                  <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-[#E60000] flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#E60000] animate-ping inline-block"></span>
+                    {t('ISOLATED SIGNAGE & 3D ILLUMINATION INSPECTION', 'فحص اللوحة المعزولة ومحاكاة الإضاءة')}
+                  </h3>
+                  <span className="text-[11px] font-mono text-[#888]">
+                    {t('Toggle Day / Night Mode to simulate LED glow', 'بدّل بين وضعي النهار والليل لمعاينة توهج الـ LED')}
+                  </span>
+                </div>
+                <StudioCutoutViewer 
+                  project={project}
+                  onOpenLightbox={() => setLightboxIndex(0)}
+                />
+              </div>
+            )}
 
             {/* Challenge & Solution Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">

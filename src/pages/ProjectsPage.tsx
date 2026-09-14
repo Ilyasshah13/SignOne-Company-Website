@@ -1,7 +1,17 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { initialProjects } from '../data/initialData';
-import { MapPin, Search, Filter, ArrowRight, ArrowLeft, Building2 } from 'lucide-react';
+import { CutoutProjectsShowcase } from '../components/ui/CutoutProjectsShowcase';
+import { 
+  MapPin, 
+  Search, 
+  Filter, 
+  ArrowRight, 
+  ArrowLeft, 
+  Building2, 
+  Sparkles, 
+  Layers
+} from 'lucide-react';
 
 interface ProjectsPageProps {
   onNavigate: (path: string) => void;
@@ -12,33 +22,40 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
   const [selectedCategory, setSelectedCategory] = useState('ALL');
   const [selectedLocation, setSelectedLocation] = useState('ALL');
   const [searchQuery, setSearchQuery] = useState('');
+  const [viewMode, setViewMode] = useState<'all' | 'cutout'>('all');
 
   const categories = [
     'ALL',
-    'Industrial & Manufacturing',
-    'Commercial & Cladding',
-    'Retail & Commercial',
-    'Giga Projects & Construction',
+    'Sports & Leisure / Architectural Illumination',
     'Corporate & Towers',
-    'Outdoor Advertising'
+    'Healthcare & Medical Campuses',
+    'Retail & Commercial',
+    'Government & Industrial',
+    'Commercial & Cladding',
+    'Industrial & Manufacturing'
   ];
 
   const locations = [
     'ALL',
     'Riyadh',
     'Jeddah',
+    'AlUla',
     'Eastern Province'
   ];
 
   const filteredProjects = initialProjects.filter(project => {
-    const matchesCategory = selectedCategory === 'ALL' || project.category.toLowerCase() === selectedCategory.toLowerCase();
+    if (viewMode === 'cutout' && !project.hasCutoutMode) {
+      return false;
+    }
+    const matchesCategory = selectedCategory === 'ALL' || project.category.toLowerCase().includes(selectedCategory.toLowerCase());
     const matchesLocation = selectedLocation === 'ALL' || project.location.toLowerCase().includes(selectedLocation.toLowerCase());
     const q = searchQuery.toLowerCase();
     const matchesSearch = !searchQuery || (
       project.title.toLowerCase().includes(q) ||
       project.titleAr.includes(q) ||
       project.client.toLowerCase().includes(q) ||
-      project.location.toLowerCase().includes(q)
+      project.location.toLowerCase().includes(q) ||
+      (project.signType && project.signType.toLowerCase().includes(q))
     );
     return matchesCategory && matchesLocation && matchesSearch;
   });
@@ -57,19 +74,35 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
           </h1>
           <p className="text-sm sm:text-base text-[#999] max-w-3xl leading-relaxed">
             {t(
-              'Explore how Sign One engineered, fabricated, and installed monumental signage, cladding envelopes, and wayfinding networks for Saudi Arabia’s leading landmark developments.',
-              'استكشف كيف قامت ساين ون بهندسة وتصنيع وتركيب أضخم اللوحات وتكسيات الواجهات وشبكات الإرشاد المعمارية لأبرز المشاريع في المملكة.'
+              'Explore how Sign One engineered, fabricated, and installed monumental signage, isolated 3D channel letters, cladding envelopes, and wayfinding networks for Saudi Arabia’s leading landmark developments.',
+              'استكشف كيف قامت ساين ون بهندسة وتصنيع وتركيب أضخم اللوحات والحروف ثلاثية الأبعاد المعزولة وتكسيات الواجهات وشبكات الإرشاد المعمارية لأبرز المشاريع في المملكة.'
             )}
           </p>
         </div>
       </section>
 
+      {/* Featured Interactive Studio Cutout Showcase */}
+      <CutoutProjectsShowcase onNavigate={onNavigate} />
+
       {/* Filter and Search Bar */}
       <section className="py-8 px-4 sm:px-8 border-b border-[#1c1c1c] bg-[#111] sticky top-[60px] z-20">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Category Pills */}
+          {/* Category & Mode Pills */}
           <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
-            {categories.map((cat) => (
+            {/* Cutout Mode Pill */}
+            <button
+              onClick={() => setViewMode(viewMode === 'cutout' ? 'all' : 'cutout')}
+              className={`text-xs uppercase tracking-wider font-semibold px-4 py-2 rounded-xs transition-all flex items-center gap-1.5 ${
+                viewMode === 'cutout'
+                  ? 'bg-amber-500 text-black font-bold shadow-[0_0_15px_rgba(245,158,11,0.4)]'
+                  : 'bg-[#1e1e1e] text-[#AAA] hover:text-white border border-[#333]'
+              }`}
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{t('CUTOUT SIGNS ONLY', 'اللوحات المعزولة فقط')}</span>
+            </button>
+
+            {categories.slice(0, 5).map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
@@ -79,7 +112,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                     : 'bg-[#181818] text-[#888] hover:text-white border border-[#2a2a2a]'
                 }`}
               >
-                {cat === 'ALL' ? t('ALL CATEGORIES', 'جميع الفئات') : cat}
+                {cat === 'ALL' ? t('ALL CATEGORIES', 'جميع الفئات') : cat.split('/')[0]}
               </button>
             ))}
           </div>
@@ -94,7 +127,8 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
               <option value="ALL">{t('All Locations', 'كافة المدن')}</option>
               <option value="Riyadh">{t('Riyadh', 'الرياض')}</option>
               <option value="Jeddah">{t('Jeddah', 'جدة')}</option>
-              <option value="Al Khobar">{t('Al Khobar', 'الخبر')}</option>
+              <option value="AlUla">{t('AlUla', 'العلا')}</option>
+              <option value="Eastern">{t('Eastern Province', 'المنطقة الشرقية')}</option>
             </select>
 
             <div className="relative flex-1 md:w-60">
@@ -120,7 +154,7 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                 {t('No projects match your filter criteria.', 'لا توجد مشاريع مطابقة لمعايير البحث الحالية.')}
               </p>
               <button
-                onClick={() => { setSelectedCategory('ALL'); setSelectedLocation('ALL'); setSearchQuery(''); }}
+                onClick={() => { setSelectedCategory('ALL'); setSelectedLocation('ALL'); setSearchQuery(''); setViewMode('all'); }}
                 className="text-xs uppercase tracking-wider font-bold text-[#E60000] hover:underline"
               >
                 {t('RESET FILTERS', 'إعادة ضبط الفلاتر')}
@@ -132,30 +166,56 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                 <div
                   key={project.id}
                   onClick={() => onNavigate(`/projects/${project.slug}`)}
-                  className="bg-[#121212] border border-[#202020] hover:border-[#E60000] rounded-sm overflow-hidden group cursor-pointer transition-all duration-300 flex flex-col justify-between shadow-xl"
+                  className="bg-[#121212] border border-[#202020] hover:border-[#E60000] rounded-sm overflow-hidden group cursor-pointer transition-all duration-300 flex flex-col justify-between shadow-xl relative"
                 >
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden bg-black flex items-center justify-center">
+                    {/* Studio Cutout Glow Halo */}
+                    {project.hasCutoutMode && (
+                      <div 
+                        className="absolute inset-0 opacity-25 group-hover:opacity-60 transition-opacity duration-500 filter blur-xl pointer-events-none"
+                        style={{
+                          background: `radial-gradient(circle at center, ${project.illuminationColor || '#E60000'} 0%, transparent 70%)`
+                        }}
+                      />
+                    )}
+
                     <img
-                      src={project.featuredImage}
+                      src={project.cutoutImage || project.featuredImage}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-[1.05]"
                       referrerPolicy="no-referrer"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-                    <div className="absolute top-4 left-4 font-mono text-[10px] bg-black/80 px-2 py-1 text-white border border-white/20">
-                      {project.year} • {t(project.category, project.categoryAr)}
+                    
+                    {/* Top Badges */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                      <div className="font-mono text-[10px] bg-black/80 px-2 py-1 text-white border border-white/20 rounded-xs">
+                        {project.year} • {t(project.category, project.categoryAr)}
+                      </div>
+                      {project.hasCutoutMode && (
+                        <div className="font-mono text-[10px] bg-[#E60000] text-white px-2 py-0.5 rounded-xs font-bold uppercase tracking-wider flex items-center gap-1 shadow-md">
+                          <Sparkles className="w-2.5 h-2.5" />
+                          <span>{t('STUDIO CUTOUT', 'لوحة معزولة')}</span>
+                        </div>
+                      )}
                     </div>
+
                     <div className="absolute bottom-3 left-4 right-4 flex items-center justify-between text-xs text-[#AAA]">
                       <span className="flex items-center gap-1">
                         <MapPin className="w-3 h-3 text-[#E60000]" />
                         <span>{t(project.location, project.locationAr)}</span>
                       </span>
+                      {project.letterDepth && (
+                        <span className="font-mono text-[10px] text-amber-400 bg-black/70 px-2 py-0.5 rounded-xs border border-amber-500/30">
+                          {project.letterDepth}
+                        </span>
+                      )}
                     </div>
                   </div>
 
                   <div className="p-6">
                     <div className="text-[11px] font-mono text-[#888] uppercase mb-1">{project.client}</div>
-                    <h3 className="text-lg font-bold text-white group-hover:text-[#E60000] transition-colors mb-2">
+                    <h3 className="text-lg font-bold text-white group-hover:text-[#E60000] transition-colors mb-2 line-clamp-2">
                       {t(project.title, project.titleAr)}
                     </h3>
                     <p className="text-xs text-[#888] leading-relaxed line-clamp-2 mb-4">
