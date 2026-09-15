@@ -181,9 +181,9 @@ export const StudioCutoutViewer: React.FC<StudioCutoutViewerProps> = ({
           referrerPolicy="no-referrer"
           onError={(e) => {
             const target = e.currentTarget;
-            if (!target.dataset.fallbackApplied) {
+            if (!target.dataset.fallbackApplied && project.featuredImage && target.src !== project.featuredImage) {
               target.dataset.fallbackApplied = 'true';
-              target.src = '/projects/dar_global_sign_1789371745942.jpg';
+              target.src = project.featuredImage;
             }
           }}
         />

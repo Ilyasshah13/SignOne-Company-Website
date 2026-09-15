@@ -105,9 +105,9 @@ export const CutoutProjectsShowcase: React.FC<CutoutProjectsShowcaseProps> = ({
                         referrerPolicy="no-referrer"
                         onError={(e) => {
                           const target = e.currentTarget;
-                          if (!target.dataset.fallbackApplied) {
+                          if (!target.dataset.fallbackApplied && proj.featuredImage && target.src !== proj.featuredImage) {
                             target.dataset.fallbackApplied = 'true';
-                            target.src = '/projects/dar_global_sign_1789371745942.jpg';
+                            target.src = proj.featuredImage;
                           }
                         }}
                       />

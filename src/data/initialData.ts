@@ -389,10 +389,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "120 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/alula_sc_sign_1789372074734.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
+      "/projects/alula_sc_sign_1789372074734.jpg"
     ],
     featured: true,
     published: true,
@@ -426,10 +423,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "100 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/dar_global_sign_1789371745942.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/7.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
+      "/projects/dar_global_sign_1789371745942.jpg"
     ],
     featured: true,
     published: true,
@@ -463,7 +457,46 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "300 mm Monolith",
     hasCutoutMode: true,
     gallery: [
-      "/projects/imc_pylon_sign_1789372091598.jpg",
+      "/projects/imc_pylon_sign_1789372091598.jpg"
+    ],
+    featured: true,
+    published: true,
+    isDemo: false
+  },
+  {
+    id: "proj-imc-emergency",
+    slug: "international-medical-center-imc-emergency-portal",
+    title: "International Medical Center (IMC) — Emergency Department Portal & Canopy Signage",
+    titleAr: "المركز الطبي الدولي (IMC) — بوابة قسم الطوارئ والحروف المضيئة فوق المظلة المعمارية",
+    description: "Prominent front-lit 3D crimson red Emergency channel letters and custom illuminated blue Islamic arch emblem installed above the hospital emergency drop-off architectural mashrabiya canopy.",
+    descriptionAr: "حروف بارزة ثلاثية الأبعاد مضيئة باللون الأحمر القرمزي لكلمة (الطوارئ - EMERGENCY) مع شعار القوس الإسلامي الأزرق المضيء، مثبتة أعلى مظلة مدخل سيارات الإسعاف والمراجعين للمركز الطبي الدولي بجدة.",
+    category: "Healthcare & Medical Campuses",
+    categoryAr: "مستشفيات ومدن طبية",
+    location: "Al Ruwais, Jeddah",
+    locationAr: "حي الرويس، جدة",
+    year: "2025",
+    client: "International Medical Center (IMC) Emergency Care",
+    services: ["Building Signage", "3D Letters", "LED Channel Letters", "Illuminated Signage"],
+    materials: ["High-Impact Crimson Translucent Acrylic", "Electrostatic Powder-Coated Aluminum Returns", "High-Candela Medical-Grade LEDs (IP68)", "Structural Canopy Cantilever Anchors"],
+    materialsAr: ["أكريليك أحمر ناصع عالي النفاذية ومقاوم للصدمات", "أجناب ألمنيوم مشكلة بطلاء حراري معتمد", "وحدات LED عالية الشدة للرؤية النهارية والليلية على مدار 24 ساعة", "كوابيل تثبيت إنشائية مخفية فوق المظلة"],
+    challenge: "Critical 24/7 high-urgency optical visibility from approaching emergency vehicles along coastal avenues without creating night glare.",
+    challengeAr: "تحقيق أعلى مستويات الوضوح البصري الفوري لسيارات الإسعاف والمراجعين ليلاً ونهاراً دون إبهار مع مقاومة رطوبة البحر المباشرة.",
+    solution: "Medical-grade 3D channel letters with wide-angle prismatic LED modules and concealed stainless steel sub-framing integrated into the building facade.",
+    solutionAr: "تصنيع حروف بارزة معالجة بتقنية التشتيت البصري وتثبيتها بهيكل ستانلس ستيل مخفي ومدمج تماماً مع حجر الواجهة والمظلة المعمارية.",
+    designDescription: "Bold bilingual emergency typography paired with the hospital's distinguished Islamic arch silhouette emblem.",
+    designDescriptionAr: "طباعة معمارية ثنائية اللغة لعلامة الطوارئ متناسقة مع شعار القوس الإسلامي الشهير للمستشفى.",
+    manufacturingDescription: "Precision acrylic vacuum thermoforming and CNC aluminum returns assembled in clean-room conditions.",
+    manufacturingDescriptionAr: "تشكيل حراري للأكريليك وتفريز آلي لأجناب الحروف المعدنية مع عزل تام ضد تسرب مياه الأمطار والغبار IP68.",
+    installationDescription: "Cantilevered structural mounting above the vehicle entrance portal with vibration dampers.",
+    installationDescriptionAr: "تثبيت معلق فوق مظلة المدخل الرئيسي مع مخمدات اهتزاز وكابلات أمان متكاملة.",
+    featuredImage: "/projects/imc_emergency_sign_1789372292904.jpg",
+    cutoutImage: "/projects/imc_emergency_sign_1789372292904.jpg",
+    signType: "Illuminated Red 3D Emergency Letters & Blue Islamic Arch Emblem",
+    signTypeAr: "حروف طوارئ بارزة مضيئة ثلاثية الأبعاد وشعار القوس الإسلامي المضيء",
+    illuminationColor: "#E60000",
+    letterDepth: "120 mm",
+    hasCutoutMode: true,
+    gallery: [
       "/projects/imc_emergency_sign_1789372292904.jpg"
     ],
     featured: true,
@@ -498,10 +531,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "80 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/modon_sign_1789372114515.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34.jpeg"
+      "/projects/modon_sign_1789372114515.jpg"
     ],
     featured: true,
     published: true,
@@ -535,10 +565,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "60 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/ihcc_cladding_sign_1789372153007.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/9.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/2.jpg"
+      "/projects/ihcc_cladding_sign_1789372153007.jpg"
     ],
     featured: true,
     published: true,
@@ -572,10 +599,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "150 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/lifestyle_tower_1789372177376.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/7.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
+      "/projects/lifestyle_tower_1789372177376.jpg"
     ],
     featured: true,
     published: true,
@@ -609,10 +633,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "80 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/caffeine_lab_sign_1789372131051.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/6.jpg"
+      "/projects/caffeine_lab_sign_1789372131051.jpg"
     ],
     featured: true,
     published: true,
@@ -646,10 +667,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "70 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/scoop_mashrabiya_sign_1789372262274.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg"
+      "/projects/scoop_mashrabiya_sign_1789372262274.jpg"
     ],
     featured: true,
     published: true,
@@ -683,10 +701,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "40 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/babulal_interior_sign_1789372223342.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/6.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg"
+      "/projects/babulal_interior_sign_1789372223342.jpg"
     ],
     featured: true,
     published: true,
@@ -720,10 +735,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "60 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/giraffe_neon_sign_1789372240306.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/6.jpg"
+      "/projects/giraffe_neon_sign_1789372240306.jpg"
     ],
     featured: true,
     published: true,
@@ -757,10 +769,7 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "15 mm Plaque",
     hasCutoutMode: true,
     gallery: [
-      "/projects/snood_meeting_sign_1789372276846.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/6.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg"
+      "/projects/snood_meeting_sign_1789372276846.jpg"
     ],
     featured: false,
     published: true,
@@ -794,9 +803,7 @@ export const initialProjects: ProjectItem[] = [
     installationDescriptionAr: "إشراف هندسي متكامل ورافعات ثقيلة لنقل وتركيب الهياكل الضخمة.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34.jpeg"
+      "https://signone.sa/wp-content/uploads/2026/06/1.jpg"
     ],
     featured: true,
     published: true,
@@ -824,9 +831,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "نظام تثبيت هندسي عائم يسمح بالتمدد الحراري الطبيعي مع الحفاظ على موازنة ليزرية دقيقة للغاية لخطوط الواجهة.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/9.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/2.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp"
     ],
     featured: true,
     published: true,
@@ -854,9 +859,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "حساب المسافات الضوئية رقمياً مع عدسات تشتيت عريضة الزاوية تمنح الحروف مظهراً ناصعاً ومريحاً للعين.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/6.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp"
     ],
     featured: true,
     published: true,
@@ -884,9 +887,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "توزيع هندسي دقيق لقواعد الخرسانة مع جمالونات حديدية خلفية تمتص صدمات الرياح وتضمن استقرار السور التام.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/5.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/5.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/3.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/8.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/5.jpg"
     ],
     featured: true,
     published: true,
@@ -914,9 +915,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "تجهيز وتجميع الهيكل مسبقاً في مصانع ساين ون واختبار التوصيلات الكهربائية قبل الرفع بالونش ليلاً لضمان سرعة التثبيت بأمان.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/7.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/7.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/7.jpg"
     ],
     featured: true,
     published: true,
@@ -944,9 +943,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "نمذجة إجهادات الرياح بالحاسب الآلي وتثبيت قفص مسامير فائق القوة، مع أبواب صيانة معزولة تمنح وصولاً سهلاً وآمناً للمحولات.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/8.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/8.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/5.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/3.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/8.jpg"
     ],
     featured: false,
     published: true,
@@ -1004,9 +1001,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "النمذجة ثلاثية الأبعاد والتفريز المحوسب بورش ساين ون، مما أتاح ثني الألواح وتجميعها في الموقع بسلاسة تامة.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/9.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/9.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
-      "https://signone.sa/wp-content/uploads/2026/06/2.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/9.jpg"
     ],
     featured: false,
     published: true,
@@ -1034,9 +1029,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "تدعيم هندسي متقن بجمالونات ثلاثية وقواعد احتكاك أرضية معتمدة وفق معايير أمان البلديات.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/3.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/3.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/5.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/8.jpg"
+      "https://signone.sa/wp-content/uploads/2026/06/3.jpg"
     ],
     featured: false,
     published: true,
@@ -1064,9 +1057,7 @@ export const initialProjects: ProjectItem[] = [
     solutionAr: "العمل على مراحل متتابعة في أوقات الهدوء وتوفير ممرات حماية مسقوفة للجمهور مع تواجد دائم لمسؤولي السلامة.",
     featuredImage: "https://signone.sa/wp-content/uploads/2026/06/2.jpg",
     gallery: [
-      "https://signone.sa/wp-content/uploads/2026/06/2.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg",
-      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp"
+      "https://signone.sa/wp-content/uploads/2026/06/2.jpg"
     ],
     featured: false,
     published: true,

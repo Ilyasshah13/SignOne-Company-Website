@@ -594,13 +594,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 alt={featuredProject.title}
                 className="w-full h-full object-cover filter contrast-[1.05]"
                 referrerPolicy="no-referrer"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  if (!target.dataset.fallbackApplied) {
-                    target.dataset.fallbackApplied = 'true';
-                    target.src = '/projects/dar_global_sign_1789371745942.jpg';
-                  }
-                }}
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-[#121212] hidden lg:block"></div>
               <div className="absolute top-4 left-4 font-mono text-xs bg-black/80 px-3 py-1 text-white border border-white/20">
@@ -883,13 +876,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-[1.05]"
                     referrerPolicy="no-referrer"
-                    onError={(e) => {
-                      const target = e.currentTarget;
-                      if (!target.dataset.fallbackApplied) {
-                        target.dataset.fallbackApplied = 'true';
-                        target.src = '/projects/dar_global_sign_1789371745942.jpg';
-                      }
-                    }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent"></div>
                   <div className="absolute top-4 left-4 font-mono text-[10px] bg-black/80 px-2 py-1 text-white border border-white/20">
@@ -1006,8 +992,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                   className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
                   loading="lazy"
                   onError={(e) => {
-                    // Fallback to client1.jpg if any specific logo fails
-                    (e.target as HTMLImageElement).src = 'https://signone.sa/wp-content/uploads/2026/06/client1.jpg';
+                    // Hide if failed so client1 is not repeated
+                    (e.target as HTMLImageElement).style.display = 'none';
                   }}
                 />
               </div>

@@ -32,7 +32,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
   const prevProject = initialProjects[(currentIndex - 1 + initialProjects.length) % initialProjects.length];
   const nextProject = initialProjects[(currentIndex + 1) % initialProjects.length];
 
-  const galleryImages = [project.featuredImage, ...project.gallery];
+  const galleryImages = Array.from(new Set([project.featuredImage, ...(project.gallery || [])].filter(Boolean)));
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -60,13 +60,6 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
             alt={project.title}
             className="w-full h-full object-cover filter contrast-[1.1] brightness-50"
             referrerPolicy="no-referrer"
-            onError={(e) => {
-              const target = e.currentTarget;
-              if (!target.dataset.fallbackApplied) {
-                target.dataset.fallbackApplied = 'true';
-                target.src = '/projects/dar_global_sign_1789371745942.jpg';
-              }
-            }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#080808] via-[#080808]/40 to-transparent"></div>
         </div>
@@ -208,13 +201,6 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({ slug, onNa
                       alt={`${project.title} detail ${idx + 1}`}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-[1.05]"
                       referrerPolicy="no-referrer"
-                      onError={(e) => {
-                        const target = e.currentTarget;
-                        if (!target.dataset.fallbackApplied) {
-                          target.dataset.fallbackApplied = 'true';
-                          target.src = '/projects/dar_global_sign_1789371745942.jpg';
-                        }
-                      }}
                     />
                     <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                       <div className="p-3 bg-black/70 rounded-full border border-white/20 text-white">
