@@ -184,6 +184,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({ onNavigate }) => {
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter contrast-[1.05]"
                       referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (!target.dataset.fallbackApplied) {
+                          target.dataset.fallbackApplied = 'true';
+                          target.src = '/projects/dar_global_sign_1789371745942.jpg';
+                        }
+                      }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                     

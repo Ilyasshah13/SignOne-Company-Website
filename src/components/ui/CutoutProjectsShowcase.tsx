@@ -103,6 +103,13 @@ export const CutoutProjectsShowcase: React.FC<CutoutProjectsShowcaseProps> = ({
                         alt={proj.title}
                         className="w-full h-full object-cover"
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          const target = e.currentTarget;
+                          if (!target.dataset.fallbackApplied) {
+                            target.dataset.fallbackApplied = 'true';
+                            target.src = '/projects/dar_global_sign_1789371745942.jpg';
+                          }
+                        }}
                       />
                       {isSelected && (
                         <div className="absolute inset-0 bg-[#E60000]/20 border border-[#E60000]"></div>

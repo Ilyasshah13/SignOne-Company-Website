@@ -179,6 +179,13 @@ export const StudioCutoutViewer: React.FC<StudioCutoutViewerProps> = ({
               : 'filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] brightness-90 contrast-95'
           }`}
           referrerPolicy="no-referrer"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (!target.dataset.fallbackApplied) {
+              target.dataset.fallbackApplied = 'true';
+              target.src = '/projects/dar_global_sign_1789371745942.jpg';
+            }
+          }}
         />
 
         {/* Cutout Watermark Stamp */}

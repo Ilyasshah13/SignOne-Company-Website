@@ -389,7 +389,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "120 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/alula_sc_sign_1789372074734.jpg"
+      "/projects/alula_sc_sign_1789372074734.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
     ],
     featured: true,
     published: true,
@@ -423,7 +426,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "100 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/dar_global_sign_1789371745942.jpg"
+      "/projects/dar_global_sign_1789371745942.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/7.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
     ],
     featured: true,
     published: true,
@@ -492,7 +498,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "80 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/modon_sign_1789372114515.jpg"
+      "/projects/modon_sign_1789372114515.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
+      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-29-at-13.13.34.jpeg"
     ],
     featured: true,
     published: true,
@@ -526,7 +535,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "60 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/ihcc_cladding_sign_1789372153007.jpg"
+      "/projects/ihcc_cladding_sign_1789372153007.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/cladding-work-in-saudi-arabia-1200x800-1.webp",
+      "https://signone.sa/wp-content/uploads/2026/06/9.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/2.jpg"
     ],
     featured: true,
     published: true,
@@ -560,7 +572,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "150 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/lifestyle_tower_1789372177376.jpg"
+      "/projects/lifestyle_tower_1789372177376.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/7.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/1.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/header_back.jpg"
     ],
     featured: true,
     published: true,
@@ -594,7 +609,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "80 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/caffeine_lab_sign_1789372131051.jpg"
+      "/projects/caffeine_lab_sign_1789372131051.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
+      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/6.jpg"
     ],
     featured: true,
     published: true,
@@ -628,7 +646,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "70 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/scoop_mashrabiya_sign_1789372262274.jpg"
+      "/projects/scoop_mashrabiya_sign_1789372262274.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
+      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/4.jpg"
     ],
     featured: true,
     published: true,
@@ -662,7 +683,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "40 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/babulal_interior_sign_1789372223342.jpg"
+      "/projects/babulal_interior_sign_1789372223342.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/6.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg"
     ],
     featured: true,
     published: true,
@@ -696,7 +720,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "60 mm",
     hasCutoutMode: true,
     gallery: [
-      "/projects/giraffe_neon_sign_1789372240306.jpg"
+      "/projects/giraffe_neon_sign_1789372240306.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/IMG_1752.JPG-e1782730306209.webp",
+      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/6.jpg"
     ],
     featured: true,
     published: true,
@@ -730,7 +757,10 @@ export const initialProjects: ProjectItem[] = [
     letterDepth: "15 mm Plaque",
     hasCutoutMode: true,
     gallery: [
-      "/projects/snood_meeting_sign_1789372276846.jpg"
+      "/projects/snood_meeting_sign_1789372276846.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/4.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/6.jpg",
+      "https://signone.sa/wp-content/uploads/2026/06/1-1.jpg"
     ],
     featured: false,
     published: true,
@@ -1044,11 +1074,14 @@ export const initialProjects: ProjectItem[] = [
   }
 ];
 
-export const initialClients: ClientLogo[] = Array.from({ length: 42 }, (_, i) => ({
-  id: `client-${i + 1}`,
+// Real verified client logos hosted on signone.sa
+const VERIFIED_CLIENT_IDS = [1, 3, 4, 5, 6, 7, 8, 9, 11, 13, 14, 17, 20, 21, 22, 27, 29, 34, 35, 36, 39, 40, 41, 42];
+
+export const initialClients: ClientLogo[] = VERIFIED_CLIENT_IDS.map((num, i) => ({
+  id: `client-${num}`,
   name: `Client Partner ${i + 1}`,
   nameAr: `شريك النجاح ${i + 1}`,
-  logoUrl: `https://signone.sa/wp-content/uploads/2026/06/client${i + 1}.jpg`
+  logoUrl: `https://signone.sa/wp-content/uploads/2026/06/client${num}.jpg`
 }));
 
 export const initialIndustries: IndustryItem[] = [
